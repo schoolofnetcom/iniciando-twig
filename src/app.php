@@ -26,6 +26,19 @@ $app['view.renderer'] = function () use ($app) {
     return new ViewRenderer($pathTemplates);
 };
 
+$app['twig'] = function(){
+    $loader = new Twig_Loader_Filesystem(__DIR__ . '/../templates/twig');
+
+    $twig = new Twig_Environment($loader, [
+        'debug' => true,
+        'cache' => __DIR__ .'/../data/cache/twig'
+    ]);
+    $twig->addExtension(new Twig_Extension_Debug());
+    return $twig;
+};
+
+
+
 $app->get('/create-table', function (Silex\Application $app) {
     $file = fopen(__DIR__ . '/../data/schema.sql', 'r');
     while ($line = fread($file, 4096)) {
@@ -45,7 +58,7 @@ $app->mount('/admin', function($admin) use($app){
 $app->error(function(\Exception $e, Request $request, $code) use($app){
     switch ($code){
         case 404:
-            return $app['view.renderer']->render('errors/404', [
+            return $app['twig']->render('errors/404.html.twig', [
                 'message' => $e->getMessage()
             ]);
     }

@@ -1,0 +1,22 @@
+<h1>Tag IF, ELSE E ELSEIF</h1>
+{% if 1 > 2 %}
+    {{ "1 é menor que 2" }}
+{% elseif 1 > 2 %}
+    {{ "1 é não maior que 2" }}
+{% else %}
+    {{ "Vai cair aqui" }}
+{% endif %}
+
+<h1>Operador ternário</h1>
+{{ 1 < 2?"Verdadeiro": "Falso" }}
+<h1>Operador ternário reduzido</h1>
+{% set string = "School of Net" %}
+<p>
+    {{ string ? string: "Valor inválido" }}
+    {{ string ?: "Valor inválido" }}
+</p>
+<h1>Operador ternário reduzido 2</h1>
+{% set string = "School of Net" %}
+{{ string ? 'Valor válido': '' }}
+{{ string ? 'Valor válido' }}
+

@@ -1,0 +1,37 @@
+{# Math: +,-,/,%,//#}
+{# Others: [],?:,~,..,.#}
+{# Comparação: ==, !=, <, >, <=, >=, ===#}
+
+<h1>===</h1>
+{% if 2 is same as("2") %}
+    {{ "Verdadeiro" }}
+{% else %}
+    {{ "Falso" }}
+{% endif %}
+
+<h1>Starts e ends</h1>
+{% if 'School of Net' starts with 'School' %}
+    {{ "Verdadeiro" }}
+{% endif %}
+
+{% if 'School of Net' ends with 'Net' %}
+    {{ "Verdadeiro" }}
+{% endif %}
+
+<h1>Operador IN</h1>
+{% if 10 in [10,20] %}
+    {{ "Verdadeiro" }}
+{% endif %}
+
+{% if 'Net' in 'School of Net' %}
+    {{ "Verdadeiro" }}
+{% endif %}
+
+<h1>Operadores lógicos</h1>
+{% if 'Net' in 'School of Net' and (1 < 2 or 1 > 3)%}
+    {{ "Verdadeiro" }}
+{% endif %}
+
+{% if not (1 > 3)%}
+    {{ "Verdadeiro" }}
+{% endif %}

@@ -1,0 +1,33 @@
+{% set name = 'Luiz Carlos' %}
+{% set num = 2 %}
+{% set numFloat = 2.15 %}
+{% set bool = true %}
+<h1>Antes</h1>
+{{ name }}
+{{ num }}
+{{ numFloat }}
+{{ bool }}
+
+{%
+set name, num, numFloat, bool =
+    'Luiz',
+    45,
+    10.15,
+    false
+%}
+
+<br/>
+<h1>Depois</h1>
+{{ name }}
+{{ num }}
+{{ numFloat }}
+{{ bool }}
+
+{% set h1 %}
+    <h1>
+        Titulo para reaproveitar
+        <a href="#">Link</a>
+    </h1>
+{% endset %}
+
+{{ h1 }}

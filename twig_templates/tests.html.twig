@@ -1,0 +1,22 @@
+<h1>Test - Defined</h1>
+{% set cliente = 'cliente' %}
+{% if cliente is defined %}
+    {{ 'variavel client está definida' }}
+{% endif %}
+
+<h1>Test - constant</h1>
+{% if "00000000000" is constant('SON\\Cliente::CLIENTE_CPF') %}
+    {{ 'CPF é 00000000000' }}
+{% endif %}
+
+<h1>Test - array</h1>
+{% if cliente is not iterable %}
+    {{ 'variável cliente não é inteirável' }}
+{% endif %}
+<br/>
+{% set array = [] %}
+{% if array is empty %}
+    {{ 'variável array é vazia' }}
+{% endif %}
+
+

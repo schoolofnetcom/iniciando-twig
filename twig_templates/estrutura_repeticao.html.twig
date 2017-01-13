@@ -1,0 +1,36 @@
+<h1>Interação com numeros</h1>
+{% set max = 50 %}
+{% for i in 0..max %}
+    {{ i }}
+{% endfor %}
+<h1>Interação com alfabeto</h1>
+{% for i in 'a'..'z' %}
+    {{ i }}
+{% endfor %}
+
+<h1>Interação com alfabeto e índice</h1>
+{% for k,v in 'a'..'z' %}
+    <p>{{ k }} - {{ v }}</p>
+{% endfor %}
+
+{% set array = [1,2,3,4,5,6,7] %}
+<h1>Interação com array</h1>
+{% for k,v in array %}
+    <p>{{ k }} - {{ v }}</p>
+{% endfor %}
+
+{% set array = {'chave1': 'valor1', 'chave2': 'valor'} %}
+<h1>Interação com array com assoc.</h1>
+{% for k,v in array %}
+    <p>{{ k }} - {{ v }}</p>
+{% endfor %}
+
+{% set array_empty = [] %}
+<h1>Mensagem caso coleção seja vazia</h1>
+{% for k,v in array_empty %}
+    <p>{{ k }} - {{ v }}</p>
+{% else %}
+    <p>Array vazio</p>
+{% endfor %}
+
+
